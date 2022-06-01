@@ -1,0 +1,15 @@
+apiVersion: getambassador.io/v3alpha1
+kind: Mapping
+metadata:
+  name: rollout-demo-mapping-1654115603293
+  namespace: my-app
+spec:
+  service: rollout-demo.my-app:80
+  timeout_ms: 3000
+  connect_timeout_ms: 3000
+  retry_policy:
+    retry_on: 5xx
+    num_retries: 1
+    per_try_timeout: 0.150s
+  hostname: "*"
+  prefix: /test
