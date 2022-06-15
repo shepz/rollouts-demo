@@ -3,3 +3,7 @@ k8s_config:
   cluster_info:
     cluster_id: 5301ee40-f5c5-598f-914b-a5a7964bc989
     cluster_name: Guillaume Veschambre's cluster
+- manifest_path: /manifests
+  cluster_info:
+    cluster_id: 5301ee40-f5c5-598f-914b-a5a7964bc989
+    cluster_name: gveschambre
