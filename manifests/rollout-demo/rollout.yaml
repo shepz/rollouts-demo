@@ -2,12 +2,12 @@ apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
   annotations:
-    getambassador.io/rolloutId: ea6667cc-65ec-4cb4-be72-31f652245960
+    getambassador.io/rolloutId: 416f79e8-db95-4be9-a1cf-d2ac0b6a04c8
   creationTimestamp: null
   name: rollout-demo
   namespace: my-app
 spec:
-  replicas: 2
+  replicas: 5
   selector:
     matchLabels:
       app: rollout-demo
@@ -18,34 +18,34 @@ spec:
       steps:
       - setWeight: 10
       - pause:
-          duration: 120
+          duration: 60
       - setWeight: 20
       - pause:
-          duration: 120
+          duration: 60
       - setWeight: 30
       - pause:
-          duration: 120
+          duration: 60
       - setWeight: 40
       - pause:
-          duration: 120
+          duration: 60
       - setWeight: 50
       - pause:
-          duration: 120
+          duration: 60
       - setWeight: 60
       - pause:
-          duration: 120
+          duration: 60
       - setWeight: 70
       - pause:
-          duration: 120
+          duration: 60
       - setWeight: 80
       - pause:
-          duration: 120
+          duration: 60
       - setWeight: 90
       - pause:
-          duration: 120
+          duration: 60
       - setWeight: 100
       - pause:
-          duration: 120
+          duration: 60
       trafficRouting:
         ambassador:
           mappings:
@@ -60,7 +60,7 @@ spec:
       - args:
         - -text=VERSION 1
         - -listen=:8080
-        image: hashicorp/http-echo:0.2.3
+        image: hashicorp/http-echo:latest
         imagePullPolicy: Always
         name: echo-v1
         ports:
