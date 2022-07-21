@@ -1,0 +1,15 @@
+apiVersion: getambassador.io/v3alpha1
+kind: Mapping
+metadata:
+  name: quote-backend
+  namespace: my-app
+  labels: null
+  annotations: {}
+spec:
+  ambassador_id:
+  - default
+  docs:
+    path: /.ambassador-internal/openapi-docs
+  hostname: "*"
+  prefix: /backend2/
+  service: quote
